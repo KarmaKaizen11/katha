@@ -25,20 +25,20 @@
     "കഹാനി",    // Sindhi (Arabic script: ڪهاڻي, Devanagari/regional phonetics vary)
     "वारी",      // Manipuri (Meitei: ꯋꯥꯔꯤ)
   ];
-  
+
   const kathaElement = document.getElementById('katha-rotator');
   if (kathaElement) {
     let currentKathaIndex = 0;
     setInterval(() => {
       kathaElement.classList.add('fade-out');
-      
+
       setTimeout(() => {
         currentKathaIndex = (currentKathaIndex + 1) % kathaTranslations.length;
         kathaElement.textContent = kathaTranslations[currentKathaIndex];
-        
+
         kathaElement.classList.remove('fade-out');
         kathaElement.classList.add('fade-in');
-        
+
         // Remove fade-in class after transition completes to reset state
         setTimeout(() => {
           kathaElement.classList.remove('fade-in');
@@ -49,13 +49,13 @@
 
   /* ─── Category Color Map ──────────────────────────────────────── */
   const CAT_COLORS = {
-    'tomb':    '#9e3d1e',
-    'mosque':  '#c8873a',
-    'fort':    '#1a1208',
-    'gate':    '#4a7a40',
-    'garden':  '#2d8a60',
-    'pillar':  '#4040aa',
-    'other':   '#7a6a55',
+    'tomb': '#9e3d1e',
+    'mosque': '#c8873a',
+    'fort': '#1a1208',
+    'gate': '#4a7a40',
+    'garden': '#2d8a60',
+    'pillar': '#4040aa',
+    'other': '#7a6a55',
   };
 
   /* ─── Scroll Reveal via Intersection Observer ─────────────────── */
@@ -163,8 +163,8 @@
   }
 
   const statConfigs = [
-    { selector: '[data-count="3"]',   target: 3,   suffix: ' hrs' },
-    { selector: '[data-count="2.5"]', target: 2.5, suffix: ' km'  },
+    { selector: '[data-count="3"]', target: 3, suffix: ' hrs' },
+    { selector: '[data-count="2.5"]', target: 2.5, suffix: ' km' },
   ];
 
   const statsSection = document.querySelector('.trail-stats');
@@ -189,27 +189,27 @@
   }
 
   /* ─── Site Detail Sidebar ─────────────────────────────────────── */
-  const sidebar    = document.getElementById('site-sidebar');
-  const overlay    = document.getElementById('sidebar-overlay');
-  const closeBtn   = document.getElementById('sidebar-close');
-  const sidebarName   = document.getElementById('sidebar-name');
-  const sidebarBadge  = document.getElementById('sidebar-badge');
+  const sidebar = document.getElementById('site-sidebar');
+  const overlay = document.getElementById('sidebar-overlay');
+  const closeBtn = document.getElementById('sidebar-close');
+  const sidebarName = document.getElementById('sidebar-name');
+  const sidebarBadge = document.getElementById('sidebar-badge');
   const sidebarUnesco = document.getElementById('sidebar-unesco');
-  const sidebarKatha  = document.getElementById('sidebar-katha');
+  const sidebarKatha = document.getElementById('sidebar-katha');
   const sidebarCoords = document.getElementById('sidebar-coords');
 
   function openSidebar(props, lat, lng) {
-    const color   = CAT_COLORS[props.category] || '#7a6a55';
+    const color = CAT_COLORS[props.category] || '#7a6a55';
     const textCol = '#F4F4F0';
     const displayCat = props.category.charAt(0).toUpperCase() + props.category.slice(1);
 
-    sidebarBadge.textContent      = displayCat;
+    sidebarBadge.textContent = displayCat;
     sidebarBadge.style.background = color;
-    sidebarBadge.style.color      = textCol;
-    sidebarName.textContent       = props.name;
-    sidebarKatha.textContent      = props.katha;
-    sidebarCoords.textContent     = `📍 ${props.loc} | ${lat.toFixed(4)}° N, ${lng.toFixed(4)}° E`;
-    
+    sidebarBadge.style.color = textCol;
+    sidebarName.textContent = props.name;
+    sidebarKatha.textContent = props.katha;
+    sidebarCoords.textContent = `📍 ${props.loc} | ${lat.toFixed(4)}° N, ${lng.toFixed(4)}° E`;
+
     if (props.unesco) {
       sidebarUnesco.style.display = 'inline-block';
     } else {
@@ -227,8 +227,8 @@
     document.body.style.overflow = '';
   }
 
-  if (closeBtn)  closeBtn.addEventListener('click', closeSidebar);
-  if (overlay)   overlay.addEventListener('click', closeSidebar);
+  if (closeBtn) closeBtn.addEventListener('click', closeSidebar);
+  if (overlay) overlay.addEventListener('click', closeSidebar);
   document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape') closeSidebar();
   });
@@ -236,13 +236,22 @@
   /* ─── Trail Map (Leaflet + GeoJSON) ─────────────────────────── */
   const mapCanvas = document.getElementById('trail-map-canvas');
 
-  if (mapCanvas && typeof L !== 'undefined') {
-    // Center on Delhi
+  if (mapCanvas && typeof L !== 'undefined') {// 1. Define the physical boundaries of Delhi NCR
+    const delhiBounds = L.latLngBounds(
+      [28.40, 76.80], // Southwest corner (Gurugram edge)
+      [28.90, 77.50]  // Northeast corner (Ghaziabad edge)
+    );
+
+    // 2. Initialize the map with extreme restrictions
     const map = L.map('trail-map-canvas', {
-      center: [28.5900, 77.2350],
-      zoom: 12,
-      scrollWheelZoom: false,
-      attributionControl: true,
+      center: [28.5900, 77.2350], // Your original center
+      zoom: 12,                   // Your original starting zoom
+      scrollWheelZoom: false,     // Your original setting
+      attributionControl: true,   // Your original setting
+      minZoom: 12,                // CRITICAL: Prevents zooming out past the city
+      maxZoom: 19,                // Allows deep zoom into the street level
+      maxBounds: delhiBounds,     // CRITICAL: Traps the user inside the Delhi box
+      maxBoundsViscosity: 1.0     // Makes the boundary act like a solid brick wall
     });
 
     // CARTO light — clean, muted, heritage-appropriate
@@ -380,7 +389,7 @@
 
     sdetailsBtn.addEventListener('click', openSafdarjungModal);
     smodalCloseBtn.addEventListener('click', closeSafdarjungModal);
-    
+
     smodal.addEventListener('click', (e) => {
       if (e.target === smodal) closeSafdarjungModal();
     });
