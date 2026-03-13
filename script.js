@@ -236,22 +236,21 @@
   /* ─── Trail Map (Leaflet + GeoJSON) ─────────────────────────── */
   const mapCanvas = document.getElementById('trail-map-canvas');
 
-  if (mapCanvas && typeof L !== 'undefined') {// 1. Expanded Bounds: The NCR & Golden Triangle (Jaipur to Agra)
-    // Strictly cuts off before reaching international borders.
+  if (mapCanvas && typeof L !== 'undefined') {// 1. Expanded Bounds: The Regional Safe Zone (Delhi, Agra, Jaipur)
     const regionalBounds = L.latLngBounds(
-      [26.50, 75.00], // Southwest: Just past Jaipur
-      [29.50, 78.50]  // Northeast: Western UP / Haryana border
+      [26.50, 75.00], // Southwest corner: Just past Jaipur
+      [29.50, 78.50]  // Northeast corner: Western UP / Haryana
     );
 
-    // 2. Initialize the map with the wider fence
+    // 2. Initialize the map with the wider regional fence
     const map = L.map('trail-map-canvas', {
       center: [28.5900, 77.2350],
       zoom: 12,
       scrollWheelZoom: false,
       attributionControl: true,
-      minZoom: 8,                 // CRITICAL: Lowered from 12 to 8 to allow regional view
+      minZoom: 8,                 // CRITICAL: Lowered to 8 to allow the massive regional view
       maxZoom: 19,
-      maxBounds: regionalBounds,  // CRITICAL: Uses the new, wider regional fence
+      maxBounds: regionalBounds,  // CRITICAL: Uses the new wider fence
       maxBoundsViscosity: 1.0
     });
 
