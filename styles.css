@@ -1,0 +1,1200 @@
+/* ============================================
+   KATHA TRAILS — Design System & Styles
+   Chandni Chowk Heritage Walk
+   ============================================ */
+
+/* --- Google Fonts --- */
+@import url('https://fonts.googleapis.com/css2?family=Rozha+One&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&display=swap');
+
+/* --- Design Tokens --- */
+:root {
+  /* Palette */
+  --moonlight:    #F4F4F0;
+  --night-sky:    #0F172A;
+  --sandstone:    #A63C06;
+  --marigold:     #F59E0B;
+
+  /* Semantic aliases */
+  --bg:           var(--moonlight);
+  --text:         var(--night-sky);
+  --accent:       var(--sandstone);
+  --highlight:    var(--marigold);
+
+  /* Typography */
+  --font-heading: 'Rozha One', serif;
+  --font-body:    'DM Sans', sans-serif;
+
+  /* Spacing scale */
+  --space-xs:  0.5rem;
+  --space-sm:  1rem;
+  --space-md:  1.5rem;
+  --space-lg:  2.5rem;
+  --space-xl:  4rem;
+  --space-2xl: 6rem;
+  --space-3xl: 8rem;
+
+  /* Layout */
+  --gali-width: 42rem;
+  --gutter:     1.25rem;
+
+  /* Transitions */
+  --ease-smooth: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+
+  /* Category Colors */
+  --cat-tomb:    #9e3d1e;
+  --cat-mosque:  #c8873a;
+  --cat-fort:    #1a1208;
+  --cat-gate:    #4a7a40;
+  --cat-garden:  #2d8a60;
+  --cat-pillar:  #4040aa;
+  --cat-other:   #7a6a55;
+}
+
+/* --- Reset & Base --- */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 100%;
+}
+
+body {
+  font-family: var(--font-body);
+  font-weight: 400;
+  color: var(--text);
+  background-color: var(--bg);
+  line-height: 1.8;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+a {
+  color: var(--accent);
+  text-decoration: none;
+  transition: color 0.3s var(--ease-smooth);
+}
+
+a:hover {
+  color: var(--highlight);
+}
+
+/* --- Typography --- */
+h1, h2, h3, h4 {
+  font-family: var(--font-heading);
+  font-weight: 400;
+  line-height: 1.15;
+  color: var(--text);
+}
+
+h1 { font-size: clamp(2.75rem, 6vw, 5.5rem); }
+h2 { font-size: clamp(2rem, 4vw, 3.5rem); }
+h3 { font-size: clamp(1.5rem, 3vw, 2.25rem); }
+h4 { font-size: clamp(1.15rem, 2vw, 1.5rem); }
+
+p {
+  max-width: 65ch;
+  margin-bottom: var(--space-sm);
+}
+
+.text-accent  { color: var(--accent); }
+.text-highlight { color: var(--highlight); }
+.text-muted   { color: #64748B; }
+
+/* --- Utility --- */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+
+/* ============================================
+   NAVIGATION
+   ============================================ */
+.site-nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--space-sm) var(--space-md);
+  background: rgba(244, 244, 240, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(15, 23, 42, 0.06);
+  transition: background 0.4s var(--ease-smooth),
+              box-shadow 0.4s var(--ease-smooth);
+}
+
+.site-nav.scrolled {
+  background: rgba(244, 244, 240, 0.95);
+  box-shadow: 0 4px 30px rgba(15, 23, 42, 0.08);
+}
+
+.nav-logo {
+  font-family: var(--font-heading);
+  font-size: 1.35rem;
+  color: var(--text);
+  letter-spacing: 0.02em;
+}
+
+.nav-logo span {
+  color: var(--accent);
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+  list-style: none;
+}
+
+.nav-links a {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--text);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  position: relative;
+}
+
+.nav-links a::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--accent);
+  transition: width 0.3s var(--ease-smooth);
+}
+
+.nav-links a:hover::after {
+  width: 100%;
+}
+
+.nav-links a.active::after {
+  width: 100%;
+  background: var(--highlight);
+}
+
+.nav-cta {
+  padding: 0.5rem 1.25rem;
+  background: var(--accent);
+  color: var(--moonlight) !important;
+  border-radius: 4px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  transition: background 0.3s var(--ease-smooth),
+              transform 0.2s var(--ease-smooth);
+}
+
+.nav-cta:hover {
+  background: #8B3205;
+  color: var(--moonlight) !important;
+  transform: translateY(-1px);
+}
+
+.nav-cta::after { display: none !important; }
+
+/* Mobile Nav Toggle */
+.nav-toggle {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+}
+
+.nav-toggle span {
+  width: 24px;
+  height: 2px;
+  background: var(--text);
+  border-radius: 2px;
+  transition: transform 0.3s, opacity 0.3s;
+}
+
+/* ============================================
+   HERO SECTION
+   ============================================ */
+.hero {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  overflow: hidden;
+}
+
+.hero-bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+.hero-bg img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(0.35) saturate(1.1);
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(15, 23, 42, 0.3) 0%,
+    rgba(15, 23, 42, 0.6) 60%,
+    rgba(15, 23, 42, 0.85) 100%
+  );
+  z-index: 1;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 52rem;
+  padding: var(--space-lg) var(--gutter);
+}
+
+.hero-badge {
+  display: inline-block;
+  padding: 0.4rem 1.2rem;
+  background: rgba(245, 158, 11, 0.15);
+  border: 1px solid var(--highlight);
+  border-radius: 50px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--highlight);
+  margin-bottom: var(--space-md);
+}
+
+.hero h1 {
+  color: var(--moonlight);
+  margin-bottom: var(--space-sm);
+  text-shadow: 0 4px 40px rgba(0,0,0,0.3);
+}
+
+.hero h1 em {
+  font-style: normal;
+  color: var(--highlight);
+}
+
+.hero-tagline {
+  font-size: clamp(1rem, 2vw, 1.3rem);
+  color: rgba(244, 244, 240, 0.8);
+  max-width: 38rem;
+  margin: 0 auto var(--space-lg);
+  line-height: 1.7;
+}
+
+.hero-scroll {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  color: rgba(244, 244, 240, 0.5);
+  font-size: 0.75rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  animation: pulse-down 2s ease-in-out infinite;
+}
+
+.hero-scroll-line {
+  width: 1px;
+  height: 48px;
+  background: linear-gradient(to bottom, var(--highlight), transparent);
+}
+
+@keyframes pulse-down {
+  0%, 100% { transform: translateY(0); opacity: 0.5; }
+  50%      { transform: translateY(8px); opacity: 1; }
+}
+
+/* Katha Text Rotator */
+.katha-text {
+  display: inline-block;
+  min-width: 3.5ch; /* Ensure min width so the layout doesn't jank on short words */
+  transition: opacity 0.4s var(--ease-smooth), transform 0.4s var(--ease-smooth);
+}
+
+.katha-text.fade-out {
+  opacity: 0;
+  transform: translateY(-10px);
+}
+
+.katha-text.fade-in {
+  opacity: 0;
+  transform: translateY(10px);
+}
+
+/* ============================================
+   GALI CONTAINER — Narrow Narrative Lane
+   ============================================ */
+.gali {
+  max-width: var(--gali-width);
+  margin: 0 auto;
+  padding: var(--space-2xl) var(--gutter);
+}
+
+.gali--tight {
+  max-width: 36rem;
+}
+
+/* Section chapter numbering */
+.chapter-marker {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  margin-bottom: var(--space-md);
+}
+
+.chapter-number {
+  font-family: var(--font-heading);
+  font-size: 3.5rem;
+  line-height: 1;
+  color: var(--accent);
+  opacity: 0.25;
+}
+
+.chapter-label {
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+
+.gali h2 {
+  margin-bottom: var(--space-md);
+}
+
+.gali p {
+  color: #334155;
+  margin-bottom: var(--space-md);
+}
+
+/* Inline image within gali */
+.gali-image {
+  width: 100%;
+  border-radius: 6px;
+  overflow: hidden;
+  margin: var(--space-lg) 0;
+  box-shadow: 0 12px 40px rgba(15, 23, 42, 0.12);
+}
+
+.gali-image img {
+  width: 100%;
+  height: auto;
+  filter: grayscale(80%) sepia(60%);
+  transition: filter 0.6s var(--ease-smooth),
+              transform 0.6s var(--ease-smooth);
+}
+
+.gali-image:hover img {
+  filter: grayscale(0%) sepia(0%);
+  transform: scale(1.02);
+}
+
+.gali-image figcaption {
+  padding: var(--space-xs) 0;
+  font-size: 0.8rem;
+  color: #94A3B8;
+  font-style: italic;
+}
+
+/* Decorative divider */
+.gali-divider {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  margin: var(--space-xl) 0;
+}
+
+.gali-divider::before,
+.gali-divider::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(166, 60, 6, 0.2), transparent);
+}
+
+.gali-divider span {
+  color: var(--accent);
+  font-size: 1.2rem;
+}
+
+/* ============================================
+   FULL-BLEED MONUMENT BREAKOUT
+   ============================================ */
+.monument {
+  position: relative;
+  width: 100%;
+  min-height: 80vh;
+  display: flex;
+  align-items: flex-end;
+  overflow: hidden;
+}
+
+.monument-bg {
+  position: absolute;
+  inset: 0;
+}
+
+.monument-bg img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: grayscale(60%) sepia(30%);
+  transition: filter 0.8s var(--ease-smooth);
+}
+
+.monument:hover .monument-bg img {
+  filter: grayscale(0%) sepia(0%);
+}
+
+.monument-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    0deg,
+    rgba(15, 23, 42, 0.92) 0%,
+    rgba(15, 23, 42, 0.5) 40%,
+    rgba(15, 23, 42, 0.1) 100%
+  );
+}
+
+.monument-content {
+  position: relative;
+  z-index: 2;
+  max-width: 52rem;
+  padding: var(--space-3xl) var(--space-lg);
+}
+
+.monument-label {
+  display: inline-block;
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--highlight);
+  margin-bottom: var(--space-sm);
+  padding-bottom: var(--space-xs);
+  border-bottom: 2px solid var(--highlight);
+}
+
+.monument h2 {
+  color: var(--moonlight);
+  margin-bottom: var(--space-md);
+}
+
+.monument p {
+  color: rgba(244, 244, 240, 0.75);
+  font-size: 1.05rem;
+  max-width: 48ch;
+}
+
+/* ============================================
+   TRAIL INFO / CTA SECTION
+   ============================================ */
+.trail-info {
+  background: var(--night-sky);
+  padding: var(--space-3xl) var(--gutter);
+  text-align: center;
+}
+
+.trail-info-inner {
+  max-width: var(--gali-width);
+  margin: 0 auto;
+}
+
+.trail-info h2 {
+  color: var(--moonlight);
+  margin-bottom: var(--space-xs);
+}
+
+.trail-info-subtitle {
+  color: rgba(244, 244, 240, 0.5);
+  font-size: 0.9rem;
+  margin-bottom: var(--space-xl);
+}
+
+.trail-stats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--space-md);
+  margin-bottom: var(--space-xl);
+}
+
+.trail-stat {
+  padding: var(--space-md);
+  background: rgba(244, 244, 240, 0.04);
+  border: 1px solid rgba(244, 244, 240, 0.08);
+  border-radius: 8px;
+  transition: border-color 0.3s var(--ease-smooth),
+              background 0.3s var(--ease-smooth);
+}
+
+.trail-stat:hover {
+  border-color: rgba(166, 60, 6, 0.3);
+  background: rgba(244, 244, 240, 0.06);
+}
+
+.trail-stat-value {
+  display: block;
+  font-family: var(--font-heading);
+  font-size: 1.75rem;
+  color: var(--highlight);
+  margin-bottom: 0.25rem;
+}
+
+.trail-stat-label {
+  font-size: 0.75rem;
+  color: rgba(244, 244, 240, 0.45);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+.cta-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 1rem 2.5rem;
+  background: var(--accent);
+  color: var(--moonlight);
+  font-family: var(--font-body);
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.3s var(--ease-smooth),
+              transform 0.2s var(--ease-smooth),
+              box-shadow 0.3s var(--ease-smooth);
+}
+
+.cta-button:hover {
+  background: #8B3205;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 30px rgba(166, 60, 6, 0.35);
+  color: var(--moonlight);
+}
+
+.cta-button svg {
+  transition: transform 0.3s var(--ease-smooth);
+}
+
+.cta-button:hover svg {
+  transform: translateX(4px);
+}
+
+/* ============================================
+   FOOTER
+   ============================================ */
+.site-footer {
+  background: #0A0F1E;
+  padding: var(--space-xl) var(--gutter);
+}
+
+.footer-inner {
+  max-width: var(--gali-width);
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: var(--space-sm);
+}
+
+.footer-brand {
+  font-family: var(--font-heading);
+  font-size: 1.1rem;
+  color: rgba(244, 244, 240, 0.6);
+}
+
+.footer-brand span {
+  color: var(--accent);
+}
+
+.footer-copy {
+  font-size: 0.8rem;
+  color: rgba(244, 244, 240, 0.3);
+}
+
+.footer-links {
+  display: flex;
+  gap: var(--space-md);
+  list-style: none;
+}
+
+.footer-links a {
+  font-size: 0.8rem;
+  color: rgba(244, 244, 240, 0.4);
+}
+
+.footer-links a:hover {
+  color: var(--highlight);
+}
+
+/* ============================================
+   READING PROGRESS BAR
+   ============================================ */
+#reading-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 0%;
+  height: 3px;
+  background: linear-gradient(90deg, var(--marigold), var(--sandstone));
+  z-index: 200;
+  transition: width 0.1s linear;
+  transform-origin: left;
+}
+
+/* ============================================
+   TRAIL MAP
+   ============================================ */
+.trail-map-section {
+  background: var(--night-sky);
+  padding-bottom: var(--space-xl);
+}
+
+.trail-map-section .gali {
+  padding-bottom: var(--space-md);
+}
+
+.trail-map-section .chapter-number,
+.trail-map-section .chapter-label {
+  color: var(--highlight);
+}
+
+.trail-map-section h2 {
+  color: var(--moonlight);
+}
+
+.trail-map-section p {
+  color: rgba(244, 244, 240, 0.65);
+}
+
+/* Map meta row: site counter + filter bar */
+.map-meta {
+  max-width: 72rem;
+  margin: 0 auto var(--space-md);
+  padding: 0 var(--gutter);
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: var(--space-sm);
+}
+
+.map-site-count {
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: rgba(244, 244, 240, 0.45);
+  padding-top: 0.3rem;
+}
+
+.map-site-count span {
+  color: var(--highlight);
+  font-family: var(--font-heading);
+  font-size: 1.1rem;
+}
+
+/* Filter pill bar */
+.map-filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  justify-content: flex-end;
+}
+
+.filter-pill {
+  padding: 0.35rem 0.9rem;
+  border-radius: 50px;
+  border: 1px solid rgba(244, 244, 240, 0.15);
+  background: rgba(244, 244, 240, 0.05);
+  color: rgba(244, 244, 240, 0.6);
+  font-family: var(--font-body);
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.25s var(--ease-smooth);
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.filter-pill:hover {
+  border-color: rgba(244, 244, 240, 0.4);
+  color: var(--moonlight);
+  background: rgba(244, 244, 240, 0.1);
+}
+
+.filter-pill.active {
+  color: var(--night-sky);
+  border-color: transparent;
+}
+
+.filter-pill-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+/* Category-specific pill active states */
+.filter-pill[data-cat="all"].active    { background: var(--moonlight); color: var(--night-sky); }
+.filter-pill[data-cat="tomb"].active   { background: var(--cat-tomb); color: var(--moonlight); }
+.filter-pill[data-cat="mosque"].active { background: var(--cat-mosque); color: var(--night-sky); }
+.filter-pill[data-cat="fort"].active   { background: var(--cat-fort); color: var(--moonlight); }
+.filter-pill[data-cat="gate"].active   { background: var(--cat-gate); color: var(--moonlight); }
+.filter-pill[data-cat="garden"].active { background: var(--cat-garden); color: var(--moonlight); }
+.filter-pill[data-cat="pillar"].active { background: var(--cat-pillar); color: var(--moonlight); }
+.filter-pill[data-cat="other"].active  { background: var(--cat-other); color: var(--moonlight); }
+
+.trail-map-container {
+  max-width: 72rem;
+  margin: 0 auto;
+  padding: 0 var(--gutter);
+}
+
+#trail-map-canvas {
+  width: 100%;
+  height: 480px;
+  border-radius: 12px;
+  border: 1px solid rgba(244, 244, 240, 0.08);
+  overflow: hidden;
+  box-shadow: 0 16px 60px rgba(0, 0, 0, 0.4);
+}
+
+/* --- Leaflet Popup Override --- */
+.leaflet-popup-content-wrapper {
+  background: var(--night-sky) !important;
+  color: var(--moonlight) !important;
+  border-radius: 8px !important;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4) !important;
+  border: 1px solid rgba(244, 244, 240, 0.1) !important;
+}
+
+.leaflet-popup-content {
+  margin: 14px 18px !important;
+  font-family: var(--font-body) !important;
+  font-size: 0.9rem !important;
+  line-height: 1.6 !important;
+}
+
+.leaflet-popup-content strong {
+  font-family: var(--font-heading) !important;
+  font-size: 1.1rem !important;
+  color: var(--highlight) !important;
+  display: block;
+  margin-bottom: 4px;
+}
+
+.leaflet-popup-tip {
+  background: var(--night-sky) !important;
+}
+
+.leaflet-popup-close-button {
+  color: rgba(244, 244, 240, 0.5) !important;
+}
+
+.leaflet-popup-close-button:hover {
+  color: var(--highlight) !important;
+}
+
+/* Custom marker pulse */
+.waypoint-marker {
+  width: 16px;
+  height: 16px;
+  background: var(--highlight);
+  border: 3px solid var(--moonlight);
+  border-radius: 50%;
+  box-shadow: 0 0 0 4px rgba(245, 158, 11, 0.3),
+              0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+/* ============================================
+   SITE DETAIL SIDEBAR
+   ============================================ */
+#site-sidebar {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 360px;
+  max-width: 92vw;
+  height: 100%;
+  background: var(--night-sky);
+  border-left: 1px solid rgba(244, 244, 240, 0.08);
+  z-index: 500;
+  transform: translateX(100%);
+  transition: transform 0.45s var(--ease-smooth);
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+#site-sidebar.open {
+  transform: translateX(0);
+  box-shadow: -16px 0 60px rgba(0, 0, 0, 0.5);
+}
+
+.sidebar-header {
+  padding: var(--space-md);
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: var(--space-sm);
+  border-bottom: 1px solid rgba(244, 244, 240, 0.06);
+  position: sticky;
+  top: 0;
+  background: var(--night-sky);
+  z-index: 1;
+}
+
+.sidebar-close {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: rgba(244, 244, 240, 0.4);
+  font-size: 1.5rem;
+  line-height: 1;
+  padding: 0.2rem;
+  flex-shrink: 0;
+  transition: color 0.2s;
+  margin-top: 0.25rem;
+}
+
+.sidebar-close:hover {
+  color: var(--highlight);
+}
+
+.sidebar-category-badge {
+  display: inline-block;
+  padding: 0.2rem 0.75rem;
+  border-radius: 50px;
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  margin-bottom: 0.5rem;
+}
+
+.sidebar-name {
+  font-family: var(--font-heading);
+  font-size: 1.6rem;
+  color: var(--moonlight);
+  line-height: 1.2;
+  flex: 1;
+}
+
+.sidebar-body {
+  padding: var(--space-md);
+  flex: 1;
+}
+
+.sidebar-katha {
+  color: rgba(244, 244, 240, 0.75);
+  font-size: 0.95rem;
+  line-height: 1.85;
+  max-width: none;
+}
+
+.sidebar-coords {
+  margin-top: var(--space-md);
+  padding-top: var(--space-md);
+  border-top: 1px solid rgba(244, 244, 240, 0.06);
+  font-size: 0.75rem;
+  color: rgba(244, 244, 240, 0.25);
+  letter-spacing: 0.05em;
+}
+
+/* Sidebar overlay */
+#sidebar-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0);
+  z-index: 490;
+  pointer-events: none;
+  transition: background 0.4s var(--ease-smooth);
+}
+
+#sidebar-overlay.visible {
+  background: rgba(0, 0, 0, 0.45);
+  pointer-events: all;
+}
+
+@media (max-width: 768px) {
+  #trail-map-canvas {
+    height: 360px;
+    border-radius: 8px;
+  }
+  .map-filters {
+    justify-content: flex-start;
+  }
+  .map-meta {
+    flex-direction: column;
+  }
+}
+
+/* ============================================
+   SCROLL REVEAL ANIMATION
+   ============================================ */
+.reveal {
+  opacity: 0;
+  transform: translateY(32px);
+  transition: opacity 0.8s var(--ease-smooth),
+              transform 0.8s var(--ease-smooth);
+}
+
+.reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Stagger children */
+.reveal-stagger > .reveal:nth-child(1) { transition-delay: 0s; }
+.reveal-stagger > .reveal:nth-child(2) { transition-delay: 0.1s; }
+.reveal-stagger > .reveal:nth-child(3) { transition-delay: 0.2s; }
+.reveal-stagger > .reveal:nth-child(4) { transition-delay: 0.3s; }
+
+/* ============================================
+   RESPONSIVE
+   ============================================ */
+@media (max-width: 768px) {
+  .nav-links {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    flex-direction: column;
+    background: rgba(244, 244, 240, 0.98);
+    backdrop-filter: blur(16px);
+    padding: var(--space-md);
+    gap: var(--space-sm);
+    border-bottom: 1px solid rgba(15, 23, 42, 0.08);
+  }
+
+  .nav-links.open {
+    display: flex;
+  }
+
+  .nav-toggle {
+    display: flex;
+  }
+
+  .trail-stats {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .monument {
+    min-height: 65vh;
+  }
+
+  .monument-content {
+    padding: var(--space-xl) var(--gutter);
+  }
+
+  .hero-content {
+    padding: var(--space-lg) var(--gutter);
+  }
+
+  .gali {
+    padding: var(--space-xl) var(--gutter);
+  }
+
+  .footer-inner {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .trail-stats {
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-xs);
+  }
+
+  .trail-stat {
+    padding: var(--space-sm);
+  }
+
+  .cta-button {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .hero-badge {
+    font-size: 0.65rem;
+  }
+}
+
+
+/* ============================================
+   MODAL (Safdarjung Tomb Info)
+   ============================================ */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94), visibility 0.3s;
+}
+
+.modal-overlay.open {
+  opacity: 1;
+  visibility: visible;
+}
+
+.modal-content {
+  background: var(--bg);
+  width: 90%;
+  max-width: 650px;
+  max-height: 90vh;
+  border-radius: 12px;
+  overflow-y: auto;
+  position: relative;
+  transform: translateY(20px) scale(0.95);
+  transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.4);
+  text-align: left;
+}
+
+.modal-overlay.open .modal-content {
+  transform: translateY(0) scale(1);
+}
+
+.modal-close {
+  position: absolute;
+  top: 1rem;
+  right: 1.25rem;
+  background: none;
+  border: none;
+  font-size: 2rem;
+  line-height: 1;
+  color: var(--moonlight);
+  opacity: 0.6;
+  cursor: pointer;
+  transition: opacity 0.2s, color 0.2s;
+  z-index: 10;
+}
+
+.modal-close:hover {
+  opacity: 1;
+  color: var(--highlight);
+}
+
+.modal-header {
+  padding: var(--space-xl) var(--space-lg) var(--space-sm);
+  background: var(--night-sky);
+  color: var(--moonlight);
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
+}
+
+.modal-badge {
+  display: inline-block;
+  padding: 0.3rem 0.8rem;
+  border-radius: 50px;
+  background: rgba(245, 158, 11, 0.15);
+  color: var(--highlight);
+  font-size: 0.7rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  font-weight: 700;
+  margin-bottom: var(--space-sm);
+}
+
+.modal-header h2 {
+  color: var(--moonlight);
+  margin: 0;
+  font-size: 2.2rem;
+}
+
+.modal-body {
+  padding: var(--space-md) var(--space-lg) var(--space-xl);
+  color: #334155;
+  font-size: 1.05rem;
+}
+
+.modal-image {
+  width: 100%;
+  max-height: 250px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: var(--space-md);
+  box-shadow: 0 8px 30px rgba(0,0,0,0.1);
+}
+
+.modal-body p {
+  margin-bottom: var(--space-md);
+  line-height: 1.7;
+}
+
+.modal-body h3 {
+  font-family: var(--font-heading);
+  font-size: 1.4rem;
+  font-weight: 400;
+  margin: var(--space-md) 0 var(--space-sm);
+  color: var(--text);
+}
+
+.modal-body ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.modal-body li {
+  position: relative;
+  padding-left: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.modal-body li::before {
+  content: '✦';
+  position: absolute;
+  left: 0;
+  color: var(--highlight);
+  font-size: 1rem;
+}
