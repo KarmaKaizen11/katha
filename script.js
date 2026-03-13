@@ -236,22 +236,23 @@
   /* ─── Trail Map (Leaflet + GeoJSON) ─────────────────────────── */
   const mapCanvas = document.getElementById('trail-map-canvas');
 
-  if (mapCanvas && typeof L !== 'undefined') {// 1. Define the physical boundaries of Delhi NCR
-    const delhiBounds = L.latLngBounds(
-      [28.40, 76.80], // Southwest corner (Gurugram edge)
-      [28.90, 77.50]  // Northeast corner (Ghaziabad edge)
+  if (mapCanvas && typeof L !== 'undefined') {// 1. Expanded Bounds: The NCR & Golden Triangle (Jaipur to Agra)
+    // Strictly cuts off before reaching international borders.
+    const regionalBounds = L.latLngBounds(
+      [26.50, 75.00], // Southwest: Just past Jaipur
+      [29.50, 78.50]  // Northeast: Western UP / Haryana border
     );
 
-    // 2. Initialize the map with extreme restrictions
+    // 2. Initialize the map with the wider fence
     const map = L.map('trail-map-canvas', {
-      center: [28.5900, 77.2350], // Your original center
-      zoom: 12,                   // Your original starting zoom
-      scrollWheelZoom: false,     // Your original setting
-      attributionControl: true,   // Your original setting
-      minZoom: 12,                // CRITICAL: Prevents zooming out past the city
-      maxZoom: 19,                // Allows deep zoom into the street level
-      maxBounds: delhiBounds,     // CRITICAL: Traps the user inside the Delhi box
-      maxBoundsViscosity: 1.0     // Makes the boundary act like a solid brick wall
+      center: [28.5900, 77.2350],
+      zoom: 12,
+      scrollWheelZoom: false,
+      attributionControl: true,
+      minZoom: 8,                 // CRITICAL: Lowered from 12 to 8 to allow regional view
+      maxZoom: 19,
+      maxBounds: regionalBounds,  // CRITICAL: Uses the new, wider regional fence
+      maxBoundsViscosity: 1.0
     });
 
     // CARTO light — clean, muted, heritage-appropriate
