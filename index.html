@@ -1,14 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+  <!-- Google Tag Manager -->
+  <script>(function (w, d, s, l, i) {
+      w[l] = w[l] || []; w[l].push({
+        'gtm.start':
+          new Date().getTime(), event: 'gtm.js'
+      }); var f = d.getElementsByTagName(s)[0],
+        j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+          'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+    })(window, document, 'script', 'dataLayer', 'GTM-NX2XGQKV');</script>
+  <!-- End Google Tag Manager -->
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Katha Trails — Chandni Chowk Heritage Walk | Old Delhi Walking Tour</title>
-  <meta name="description" content="Walk the centuries-old lanes of Chandni Chowk with Katha Trails. An immersive heritage walking tour through Old Delhi's bazaars, monuments, and living history.">
+  <meta name="description"
+    content="Walk the centuries-old lanes of Chandni Chowk with Katha Trails. An immersive heritage walking tour through Old Delhi's bazaars, monuments, and living history.">
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
   <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NX2XGQKV" height="0" width="0"
+      style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
 
   <!-- Reading Progress Bar -->
   <div id="reading-progress" role="progressbar" aria-label="Reading progress"></div>
@@ -21,7 +38,8 @@
     <div class="sidebar-header">
       <div>
         <span class="sidebar-category-badge" id="sidebar-badge"></span>
-        <span class="sidebar-unesco-badge" id="sidebar-unesco" style="display:none; background:#D4A017; color:#0F172A; font-size:0.6rem; font-weight:600; padding:2px 6px; border-radius:12px; margin-left:6px; letter-spacing:0.05em; vertical-align:middle;">UNESCO</span>
+        <span class="sidebar-unesco-badge" id="sidebar-unesco"
+          style="display:none; background:#D4A017; color:#0F172A; font-size:0.6rem; font-weight:600; padding:2px 6px; border-radius:12px; margin-left:6px; letter-spacing:0.05em; vertical-align:middle;">UNESCO</span>
         <h3 class="sidebar-name" id="sidebar-name">Site Name</h3>
       </div>
       <button class="sidebar-close" id="sidebar-close" aria-label="Close panel">&times;</button>
@@ -52,7 +70,8 @@
   <!-- ======================== HERO ======================== -->
   <header class="hero" id="top">
     <div class="hero-bg">
-      <img src="images/katha-hero.png" alt="A cinematic golden hour view of an ancient Indian heritage pathway" width="1920" height="1080">
+      <img src="images/katha-hero.png" alt="A cinematic golden hour view of an ancient Indian heritage pathway"
+        width="1920" height="1080">
     </div>
     <div class="hero-overlay"></div>
 
@@ -60,7 +79,8 @@
       <span class="hero-badge">Heritage Walks Across India</span>
       <h1><span id="katha-rotator" class="text-highlight katha-text">Katha</span> <br><em>Trails</em></h1>
       <p class="hero-tagline">
-        Journey through centuries of untold history. Every monument hides a story, every cobblestone whispers a secret waiting to be heard. Walk with us to uncover the soul of India.
+        Journey through centuries of untold history. Every monument hides a story, every cobblestone whispers a secret
+        waiting to be heard. Walk with us to uncover the soul of India.
       </p>
       <div class="hero-scroll">
         <span>Scroll to begin</span>
@@ -81,11 +101,16 @@
       <h2 class="reveal">More Than Just a Walk</h2>
 
       <p class="reveal">
-        At Katha Trails, we believe that history is not just found in textbooks; it is etched into the very stones of our cities. Our heritage walks are meticulously designed to transcend standard sightseeing. We focus on evocative storytelling, bringing forgotten eras, legendary figures, and hidden architectural marvels back to life.
+        At Katha Trails, we believe that history is not just found in textbooks; it is etched into the very stones of
+        our cities. Our heritage walks are meticulously designed to transcend standard sightseeing. We focus on
+        evocative storytelling, bringing forgotten eras, legendary figures, and hidden architectural marvels back to
+        life.
       </p>
 
       <p class="reveal">
-        Whether you are a seasoned history enthusiast or a curious traveler, our immersive trails invite you to step back in time. We peel back the layers of urbanization to reveal the authentic soul of India's most historic precincts.
+        Whether you are a seasoned history enthusiast or a curious traveler, our immersive trails invite you to step
+        back in time. We peel back the layers of urbanization to reveal the authentic soul of India's most historic
+        precincts.
       </p>
 
       <div class="gali-divider"><span>✦</span></div>
@@ -94,7 +119,8 @@
     <!-- ======================== FEATURED TRAIL ======================== -->
     <section class="monument" id="our-trails" aria-label="Our Trails">
       <div class="monument-bg">
-        <img src="images/paranthewali-gali.png" alt="Featured Heritage" width="1920" height="1080" style="object-fit: cover; object-position: center; filter: grayscale(40%) sepia(30%);">
+        <img src="images/paranthewali-gali.png" alt="Featured Heritage" width="1920" height="1080"
+          style="object-fit: cover; object-position: center; filter: grayscale(40%) sepia(30%);">
       </div>
       <div class="monument-overlay"></div>
 
@@ -102,7 +128,9 @@
         <span class="monument-label reveal">Featured Experience</span>
         <h2 class="reveal">The Royal Gardens Trail</h2>
         <p class="reveal">
-          Our featured route transports you through the green lung of South Delhi, tracing the architectural legacy of the Sayyid and Lodi dynasties, culminating in the masterful late-Mughal elegance of Safdarjung's Tomb. Walk through centuries of history ensconced in stunning botanical landscapes.
+          Our featured route transports you through the green lung of South Delhi, tracing the architectural legacy of
+          the Sayyid and Lodi dynasties, culminating in the masterful late-Mughal elegance of Safdarjung's Tomb. Walk
+          through centuries of history ensconced in stunning botanical landscapes.
         </p>
       </div>
     </section>
@@ -183,7 +211,11 @@
 
         <button class="cta-button reveal" id="safdarjung-details-btn">
           Explore Safdarjung Tomb Details
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round">
+            <path d="M5 12h14" />
+            <path d="m12 5 7 7-7 7" />
+          </svg>
         </button>
       </div>
     </section>
@@ -197,17 +229,25 @@
           <h2>Safdarjung Tomb</h2>
         </div>
         <div class="modal-body">
-          <img src="images/red-fort.png" alt="The stunning Safdarjung Tomb" class="modal-image" loading="lazy" style="filter: hue-rotate(20deg);" />
-          <p>Built in 1754, the tomb of Safdarjung is described as the "last flicker in the lamp of Mughal architecture." This spectacular mausoleum was erected for Mirza Muqim Abul Mansur Khan, who was popularly known as Safdarjung and served as the Prime Minister of the Mughal Empire under Emperor Ahmad Shah Bahadur.</p>
-          <p>This walk will take you through its elaborate Charbagh (four-part enclosed garden), showcasing the intricate pavilions—Jangli Mahal, Moti Mahal, and Badshah Pasand. You will learn how the architectural style mirrors the grandeur of the Taj Mahal and Humayun's Tomb, yet hints at the declining fortunes of the empire through its use of salvaged materials.</p>
+          <img src="images/red-fort.png" alt="The stunning Safdarjung Tomb" class="modal-image" loading="lazy"
+            style="filter: hue-rotate(20deg);" />
+          <p>Built in 1754, the tomb of Safdarjung is described as the "last flicker in the lamp of Mughal
+            architecture." This spectacular mausoleum was erected for Mirza Muqim Abul Mansur Khan, who was popularly
+            known as Safdarjung and served as the Prime Minister of the Mughal Empire under Emperor Ahmad Shah Bahadur.
+          </p>
+          <p>This walk will take you through its elaborate Charbagh (four-part enclosed garden), showcasing the
+            intricate pavilions—Jangli Mahal, Moti Mahal, and Badshah Pasand. You will learn how the architectural style
+            mirrors the grandeur of the Taj Mahal and Humayun's Tomb, yet hints at the declining fortunes of the empire
+            through its use of salvaged materials.</p>
           <h3>Walk Highlights:</h3>
           <ul>
-              <li>Detailed architectural decoding of the central mausoleum.</li>
-              <li>Stories of court politics during the late Mughal era.</li>
-              <li>A guided stroll through the expansive palm-lined gardens.</li>
-              <li>Continuation to the nearby historical Lodi Gardens.</li>
+            <li>Detailed architectural decoding of the central mausoleum.</li>
+            <li>Stories of court politics during the late Mughal era.</li>
+            <li>A guided stroll through the expansive palm-lined gardens.</li>
+            <li>Continuation to the nearby historical Lodi Gardens.</li>
           </ul>
-          <a href="#" class="cta-button" style="margin-top: 1.5rem; width: 100%; justify-content: center;">Confirm Booking</a>
+          <a href="#" class="cta-button" style="margin-top: 1.5rem; width: 100%; justify-content: center;">Confirm
+            Booking</a>
         </div>
       </div>
     </div>
@@ -237,4 +277,5 @@
   <script src="trail_data.js"></script>
   <script src="script.js"></script>
 </body>
+
 </html>
