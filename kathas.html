@@ -1,0 +1,958 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!-- Google Tag Manager -->
+  <script>(function (w, d, s, l, i) {
+      w[l] = w[l] || []; w[l].push({
+        'gtm.start':
+          new Date().getTime(), event: 'gtm.js'
+      }); var f = d.getElementsByTagName(s)[0],
+        j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+          'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+    })(window, document, 'script', 'dataLayer', 'GTM-NX2XGQKV');</script>
+  <!-- End Google Tag Manager -->
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Primary SEO -->
+  <title>The Katha — Stories from India's Heritage Streets | Katha Trails Blog</title>
+  <meta name="description" content="Explore the living stories behind India's monuments, bazaars, and forgotten lanes. The Katha is Katha Trails' blog — a narrative archive of history, culture, and hidden urban memory.">
+  <link rel="canonical" href="https://www.kathatrails.com/kathas.html">
+
+  <!-- Open Graph / Social -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.kathatrails.com/kathas.html">
+  <meta property="og:title" content="The Katha — Stories from India's Heritage Streets | Katha Trails Blog">
+  <meta property="og:description" content="Explore the living stories behind India's monuments, bazaars, and forgotten lanes. The Katha is Katha Trails' blog — a narrative archive of history, culture, and hidden urban memory.">
+  <meta property="og:image" content="https://www.kathatrails.com/images/katha-hero.png">
+  <meta property="og:site_name" content="Katha Trails">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="The Katha — Stories from India's Heritage Streets">
+  <meta name="twitter:description" content="A narrative archive of India's living heritage — monuments, bazaars, and the untold stories in between.">
+  <meta name="twitter:image" content="https://www.kathatrails.com/images/katha-hero.png">
+
+  <!-- Structured Data: Blog / ItemList -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Blog",
+    "name": "The Katha — Katha Trails Blog",
+    "url": "https://www.kathatrails.com/kathas.html",
+    "description": "Stories from India's heritage streets. A narrative archive of monuments, bazaars, and living urban memory.",
+    "publisher": {
+      "@type": "Organization",
+      "name": "Katha Trails",
+      "url": "https://www.kathatrails.com",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://www.kathatrails.com/images/katha-hero.png"
+      }
+    },
+    "blogPost": [
+      {
+        "@type": "BlogPosting",
+        "headline": "The Clock That Stopped: Inside Chandni Chowk's Sirhind Serai",
+        "datePublished": "2025-04-10",
+        "author": { "@type": "Organization", "name": "Katha Trails" },
+        "description": "Behind a crumbling archway near the spice market lives a caravanserai that once hosted Mughal merchants and Punjabi pilgrims."
+      },
+      {
+        "@type": "BlogPosting",
+        "headline": "Iron That Has Never Rusted: The 1,600-Year-Old Mystery of Qutub Minar",
+        "datePublished": "2025-03-28",
+        "author": { "@type": "Organization", "name": "Katha Trails" },
+        "description": "Scientists have studied it for decades. The Iron Pillar at Qutub Minar has been standing rust-free since the Gupta era."
+      },
+      {
+        "@type": "BlogPosting",
+        "headline": "A Queen's Mosque at the End of the Lane: Fatehpuri Masjid",
+        "datePublished": "2025-03-13",
+        "author": { "@type": "Organization", "name": "Katha Trails" },
+        "description": "Built by Fatehpuri Begum in 1650, this mosque at the western terminus of Chandni Chowk carries four centuries of quiet devotion."
+      }
+    ]
+  }
+  </script>
+
+  <!-- Breadcrumb Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.kathatrails.com/" },
+      { "@type": "ListItem", "position": 2, "name": "The Katha", "item": "https://www.kathatrails.com/kathas.html" }
+    ]
+  }
+  </script>
+
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    /* ============================================
+       THE KATHA — Blog Page Styles
+       ============================================ */
+
+    /* ── Page Hero ── */
+    .blog-hero {
+      background: var(--night-sky);
+      padding: 7rem var(--gutter) 4rem;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .blog-hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse 70% 60% at 50% 0%, rgba(166, 60, 6, 0.22) 0%, transparent 70%),
+        radial-gradient(ellipse 50% 40% at 20% 100%, rgba(245, 158, 11, 0.10) 0%, transparent 60%);
+      pointer-events: none;
+    }
+
+    .blog-hero-eyebrow {
+      display: inline-block;
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--highlight);
+      margin-bottom: 1.1rem;
+    }
+
+    .blog-hero h1 {
+      font-family: var(--font-heading);
+      font-size: clamp(2.8rem, 6vw, 5rem);
+      color: var(--moonlight);
+      line-height: 1.1;
+      margin-bottom: 1.2rem;
+      position: relative;
+    }
+
+    .blog-hero h1 span {
+      color: var(--sandstone);
+    }
+
+    .blog-hero-desc {
+      max-width: 38rem;
+      margin: 0 auto 2.5rem;
+      font-size: 1.1rem;
+      color: rgba(244, 244, 240, 0.6);
+      line-height: 1.75;
+      position: relative;
+    }
+
+    /* ── Tag Filter Bar ── */
+    .blog-filters {
+      display: flex;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+      justify-content: center;
+      position: relative;
+      margin-top: 0.5rem;
+    }
+
+    .blog-tag {
+      padding: 0.35rem 1rem;
+      border-radius: 50px;
+      border: 1px solid rgba(244, 244, 240, 0.15);
+      background: transparent;
+      color: rgba(244, 244, 240, 0.55);
+      font-family: var(--font-body);
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      cursor: pointer;
+      transition: all 0.25s var(--ease-smooth);
+    }
+
+    .blog-tag:hover,
+    .blog-tag.active {
+      background: var(--sandstone);
+      border-color: var(--sandstone);
+      color: var(--moonlight);
+    }
+
+    /* ── Layout ── */
+    .blog-layout {
+      max-width: 80rem;
+      margin: 0 auto;
+      padding: 4rem var(--gutter) 6rem;
+      display: grid;
+      grid-template-columns: 1fr 22rem;
+      gap: 4rem;
+      align-items: start;
+    }
+
+    /* ── Featured Article (large first card) ── */
+    .article-featured {
+      grid-column: 1 / -1;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0;
+      background: var(--night-sky);
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 20px 70px rgba(15, 23, 42, 0.2);
+      transition: transform 0.35s var(--ease-smooth), box-shadow 0.35s var(--ease-smooth);
+      text-decoration: none;
+    }
+
+    .article-featured:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 28px 80px rgba(15, 23, 42, 0.3);
+    }
+
+    .article-featured .card-image {
+      min-height: 380px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .article-featured .card-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.55s var(--ease-smooth);
+    }
+
+    .article-featured:hover .card-image img {
+      transform: scale(1.04);
+    }
+
+    .article-featured .card-body {
+      padding: 3rem 2.5rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    /* ── Article Grid ── */
+    .article-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(17rem, 1fr));
+      gap: 1.75rem;
+    }
+
+    /* ── Article Card ── */
+    .article-card {
+      background: #fff;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 4px 20px rgba(15, 23, 42, 0.07);
+      transition: transform 0.3s var(--ease-smooth), box-shadow 0.3s var(--ease-smooth);
+      display: flex;
+      flex-direction: column;
+      text-decoration: none;
+      color: inherit;
+      border: 1px solid rgba(15, 23, 42, 0.06);
+    }
+
+    .article-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 16px 48px rgba(15, 23, 42, 0.14);
+    }
+
+    .article-card-image {
+      height: 200px;
+      overflow: hidden;
+      position: relative;
+      background: var(--night-sky);
+    }
+
+    .article-card-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s var(--ease-smooth);
+    }
+
+    .article-card:hover .article-card-image img {
+      transform: scale(1.06);
+    }
+
+    .article-card-image .card-category-badge {
+      position: absolute;
+      top: 0.75rem;
+      left: 0.75rem;
+    }
+
+    .article-card-body {
+      padding: 1.4rem 1.5rem 1.5rem;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* ── Shared Card Typography ── */
+    .card-category-badge {
+      display: inline-block;
+      font-size: 0.65rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      padding: 3px 10px;
+      border-radius: 50px;
+      background: var(--sandstone);
+      color: var(--moonlight);
+      margin-bottom: 0.75rem;
+    }
+
+    .card-category-badge.tag-mumbai  { background: #0e7490; }
+    .card-category-badge.tag-walk    { background: #4a7a40; }
+    .card-category-badge.tag-history { background: #7c3aed; }
+    .card-category-badge.tag-food    { background: #c8873a; }
+    .card-category-badge.tag-guide   { background: #2d8a60; }
+
+    .card-meta {
+      font-size: 0.72rem;
+      color: rgba(15, 23, 42, 0.4);
+      letter-spacing: 0.04em;
+      margin-bottom: 0.5rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .card-meta-sep { opacity: 0.4; }
+
+    .card-title {
+      font-family: var(--font-heading);
+      font-size: 1.25rem;
+      line-height: 1.25;
+      color: var(--night-sky);
+      margin-bottom: 0.65rem;
+      transition: color 0.2s;
+    }
+
+    .article-featured .card-title {
+      font-size: clamp(1.5rem, 2.5vw, 2rem);
+      color: var(--moonlight);
+    }
+
+    .article-card:hover .card-title,
+    .article-featured:hover .card-title {
+      color: var(--sandstone);
+    }
+
+    .card-excerpt {
+      font-size: 0.9rem;
+      color: rgba(15, 23, 42, 0.6);
+      line-height: 1.7;
+      flex: 1;
+    }
+
+    .article-featured .card-excerpt {
+      color: rgba(244, 244, 240, 0.6);
+    }
+
+    .card-read-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      margin-top: 1.2rem;
+      font-size: 0.8rem;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--sandstone);
+      transition: gap 0.2s;
+    }
+
+    .card-read-link::after {
+      content: '→';
+      transition: transform 0.25s;
+    }
+
+    .article-card:hover .card-read-link::after,
+    .article-featured:hover .card-read-link::after {
+      transform: translateX(4px);
+    }
+
+    /* ── Sidebar ── */
+    .blog-sidebar {
+      position: sticky;
+      top: 5rem;
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+    }
+
+    .sidebar-widget {
+      background: #fff;
+      border-radius: 12px;
+      padding: 1.5rem;
+      border: 1px solid rgba(15, 23, 42, 0.07);
+      box-shadow: 0 4px 20px rgba(15, 23, 42, 0.05);
+    }
+
+    .sidebar-widget h3 {
+      font-family: var(--font-heading);
+      font-size: 1.05rem;
+      color: var(--night-sky);
+      margin-bottom: 1rem;
+      padding-bottom: 0.6rem;
+      border-bottom: 2px solid var(--moonlight);
+    }
+
+    /* Newsletter widget */
+    .newsletter-widget {
+      background: var(--night-sky);
+      color: var(--moonlight);
+    }
+
+    .newsletter-widget h3 {
+      color: var(--moonlight);
+      border-color: rgba(244, 244, 240, 0.1);
+    }
+
+    .newsletter-widget p {
+      font-size: 0.87rem;
+      color: rgba(244, 244, 240, 0.6);
+      margin-bottom: 1.1rem;
+      line-height: 1.65;
+    }
+
+    .newsletter-form {
+      display: flex;
+      flex-direction: column;
+      gap: 0.6rem;
+    }
+
+    .newsletter-form input {
+      width: 100%;
+      padding: 0.6rem 0.9rem;
+      border-radius: 8px;
+      border: 1px solid rgba(244, 244, 240, 0.15);
+      background: rgba(244, 244, 240, 0.07);
+      color: var(--moonlight);
+      font-family: var(--font-body);
+      font-size: 0.87rem;
+      outline: none;
+      transition: border-color 0.2s;
+    }
+
+    .newsletter-form input::placeholder {
+      color: rgba(244, 244, 240, 0.3);
+    }
+
+    .newsletter-form input:focus {
+      border-color: var(--sandstone);
+    }
+
+    .newsletter-form button {
+      width: 100%;
+      padding: 0.65rem 1rem;
+      border-radius: 8px;
+      border: none;
+      background: var(--sandstone);
+      color: var(--moonlight);
+      font-family: var(--font-body);
+      font-size: 0.8rem;
+      font-weight: 700;
+      letter-spacing: 0.07em;
+      text-transform: uppercase;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+
+    .newsletter-form button:hover {
+      background: #c04807;
+    }
+
+    /* Popular posts widget */
+    .popular-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.9rem;
+    }
+
+    .popular-list li {
+      display: grid;
+      grid-template-columns: 2.8rem 1fr;
+      gap: 0.7rem;
+      align-items: center;
+    }
+
+    .popular-num {
+      font-family: var(--font-heading);
+      font-size: 1.6rem;
+      color: var(--sandstone);
+      opacity: 0.35;
+      line-height: 1;
+      text-align: right;
+    }
+
+    .popular-title {
+      font-size: 0.83rem;
+      font-weight: 600;
+      color: var(--night-sky);
+      line-height: 1.4;
+    }
+
+    /* Tags widget */
+    .tags-cloud {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+    }
+
+    .tags-cloud a {
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      padding: 4px 10px;
+      border-radius: 50px;
+      border: 1px solid rgba(15, 23, 42, 0.12);
+      color: rgba(15, 23, 42, 0.55);
+      text-decoration: none;
+      transition: all 0.2s;
+    }
+
+    .tags-cloud a:hover {
+      background: var(--sandstone);
+      border-color: var(--sandstone);
+      color: var(--moonlight);
+    }
+
+    /* ── Load More ── */
+    .load-more-wrap {
+      grid-column: 1 / -1;
+      text-align: center;
+      padding-top: 1rem;
+    }
+
+    .btn-load-more {
+      display: inline-block;
+      padding: 0.75rem 2.2rem;
+      border-radius: 50px;
+      border: 2px solid var(--sandstone);
+      color: var(--sandstone);
+      font-family: var(--font-body);
+      font-size: 0.82rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      cursor: pointer;
+      background: transparent;
+      transition: all 0.25s var(--ease-smooth);
+    }
+
+    .btn-load-more:hover {
+      background: var(--sandstone);
+      color: var(--moonlight);
+    }
+
+    /* ── Decorative divider ── */
+    .katha-divider {
+      text-align: center;
+      color: var(--sandstone);
+      opacity: 0.3;
+      font-size: 1rem;
+      letter-spacing: 0.5em;
+      padding: 1rem 0 0;
+    }
+
+    /* ── Responsive ── */
+    @media (max-width: 900px) {
+      .blog-layout {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+      }
+
+      .article-featured {
+        grid-template-columns: 1fr;
+      }
+
+      .article-featured .card-image {
+        min-height: 260px;
+      }
+
+      .blog-sidebar {
+        position: static;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .blog-layout {
+        padding: 2.5rem var(--gutter) 4rem;
+      }
+
+      .article-featured .card-body {
+        padding: 1.75rem 1.5rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NX2XGQKV" height="0" width="0"
+      style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
+
+  <!-- Reading Progress Bar -->
+  <div id="reading-progress" role="progressbar" aria-label="Reading progress"></div>
+
+  <!-- ======================== NAVIGATION ======================== -->
+  <nav class="site-nav" aria-label="Main navigation">
+    <a href="index.html" class="nav-logo">Katha<span>Trails</span></a>
+
+    <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+
+    <ul class="nav-links">
+      <li><a href="index.html#the-trail">The Trail</a></li>
+      <li><a href="index.html#monuments">Monuments</a></li>
+      <li><a href="index.html#bazaars">Bazaars</a></li>
+      <li><a href="index.html#trail-map">Trail Map</a></li>
+      <li><a href="kathas.html" class="active">The Katha</a></li>
+      <li><a href="index.html#trail-info"><span class="nav-cta">Launching Soon</span></a></li>
+    </ul>
+  </nav>
+
+  <!-- ======================== BLOG HERO ======================== -->
+  <header class="blog-hero" id="top">
+    <span class="blog-hero-eyebrow">Stories from India's Living Heritage</span>
+    <h1>The <span>Katha</span></h1>
+    <p class="blog-hero-desc">
+      Every monument has a story that textbooks forgot. Every lane has a name that carries centuries of memory.
+      We write them down so nothing is lost.
+    </p>
+    <nav class="blog-filters" aria-label="Filter articles by topic">
+      <button class="blog-tag active" data-filter="all">All Stories</button>
+      <button class="blog-tag" data-filter="old-delhi">Old Delhi</button>
+      <button class="blog-tag" data-filter="mughal">Mughal Era</button>
+      <button class="blog-tag" data-filter="bazaars">Bazaars</button>
+      <button class="blog-tag" data-filter="architecture">Architecture</button>
+      <button class="blog-tag" data-filter="walk-guide">Walk Guides</button>
+    </nav>
+  </header>
+
+  <!-- ======================== MAIN CONTENT ======================== -->
+  <main id="blog-main">
+    <div class="blog-layout">
+
+      <!-- ── FEATURED ARTICLE ── -->
+      <a href="#" class="article-featured reveal" aria-label="Read: The Clock That Stopped">
+        <div class="card-image">
+          <img src="images/katha-hero.png"
+            alt="A sunlit caravanserai archway in Old Delhi's Chandni Chowk at golden hour"
+            width="800" height="500" loading="eager">
+        </div>
+        <div class="card-body">
+          <span class="card-category-badge">Old Delhi</span>
+          <p class="card-meta">
+            <time datetime="2025-04-10">10 April 2025</time>
+            <span class="card-meta-sep">·</span>
+            <span>6 min read</span>
+          </p>
+          <h2 class="card-title">The Clock That Stopped: Inside the Forgotten Serai of Chandni Chowk</h2>
+          <p class="card-excerpt">
+            Behind a crumbling archway near the spice market, a caravanserai built for Mughal merchants still
+            stands — invisible to the thousands who walk past it every morning. We went inside.
+          </p>
+          <span class="card-read-link">Read the full story</span>
+        </div>
+      </a>
+
+      <!-- ── ARTICLE GRID ── -->
+      <section aria-label="Blog articles">
+        <div class="article-grid">
+
+          <!-- Article 2 -->
+          <article class="article-card reveal" data-tags="architecture mughal">
+            <a href="#" aria-label="Read: The Iron Pillar Mystery">
+              <div class="article-card-image">
+                <img src="images/red-fort.png"
+                  alt="The iron pillar at Qutub Minar complex, standing in a courtyard surrounded by sand-coloured ruins"
+                  width="600" height="400" loading="lazy">
+                <span class="card-category-badge tag-history">Architecture</span>
+              </div>
+              <div class="article-card-body">
+                <p class="card-meta">
+                  <time datetime="2025-03-28">28 Mar 2025</time>
+                  <span class="card-meta-sep">·</span>
+                  <span>5 min read</span>
+                </p>
+                <h3 class="card-title">Iron That Has Never Rusted: The 1,600-Year-Old Mystery of Qutub Minar</h3>
+                <p class="card-excerpt">
+                  Scientists have baffled over it for decades. The Iron Pillar at Qutub Minar has been
+                  standing rust-free since the Gupta era — and nobody fully understands why.
+                </p>
+                <span class="card-read-link">Read story</span>
+              </div>
+            </a>
+          </article>
+
+          <!-- Article 3 -->
+          <article class="article-card reveal" data-tags="old-delhi mughal">
+            <a href="#" aria-label="Read: Fatehpuri Masjid">
+              <div class="article-card-image">
+                <img src="images/jama-masjid.png"
+                  alt="The pale marble domes of Fatehpuri Masjid glowing at dusk at the western end of Chandni Chowk"
+                  width="600" height="400" loading="lazy">
+                <span class="card-category-badge">Mughal Era</span>
+              </div>
+              <div class="article-card-body">
+                <p class="card-meta">
+                  <time datetime="2025-03-13">13 Mar 2025</time>
+                  <span class="card-meta-sep">·</span>
+                  <span>4 min read</span>
+                </p>
+                <h3 class="card-title">A Queen's Mosque at the End of the Lane: Fatehpuri Masjid</h3>
+                <p class="card-excerpt">
+                  Built in 1650 by Fatehpuri Begum, one of Shah Jahan's wives, this mosque sits quietly at
+                  Chandni Chowk's western end — a bookend to the Red Fort on the other side.
+                </p>
+                <span class="card-read-link">Read story</span>
+              </div>
+            </a>
+          </article>
+
+          <!-- Article 4 -->
+          <article class="article-card reveal" data-tags="bazaars old-delhi walk-guide">
+            <a href="#" aria-label="Read: Khari Baoli spice market">
+              <div class="article-card-image">
+                <img src="images/spice-bazaar.png"
+                  alt="Jute sacks overflowing with turmeric, dried chillies, and whole spices in Khari Baoli market"
+                  width="600" height="400" loading="lazy">
+                <span class="card-category-badge tag-food">Bazaars</span>
+              </div>
+              <div class="article-card-body">
+                <p class="card-meta">
+                  <time datetime="2025-02-22">22 Feb 2025</time>
+                  <span class="card-meta-sep">·</span>
+                  <span>7 min read</span>
+                </p>
+                <h3 class="card-title">Asia's Largest Spice Market Is a Sensory Overload — and That's the Point</h3>
+                <p class="card-excerpt">
+                  Khari Baoli has traded in spices, nuts, and dried herbs since 1650. Today it moves
+                  thousands of tonnes a month. Walk it with us.
+                </p>
+                <span class="card-read-link">Read story</span>
+              </div>
+            </a>
+          </article>
+
+          <!-- Article 5 -->
+          <article class="article-card reveal" data-tags="walk-guide old-delhi">
+            <a href="#" aria-label="Read: walk guide for Chandni Chowk">
+              <div class="article-card-image">
+                <img src="images/paranthewali-gali.png"
+                  alt="A golden paranthas cooking on a smoky tawa in Paranthewali Gali, Old Delhi"
+                  width="600" height="400" loading="lazy">
+                <span class="card-category-badge tag-walk">Walk Guide</span>
+              </div>
+              <div class="article-card-body">
+                <p class="card-meta">
+                  <time datetime="2025-02-07">7 Feb 2025</time>
+                  <span class="card-meta-sep">·</span>
+                  <span>9 min read</span>
+                </p>
+                <h3 class="card-title">The Definitive Self-Guided Walk Through Chandni Chowk (2025 Edition)</h3>
+                <p class="card-excerpt">
+                  Starting from Red Fort and ending at Fatehpuri Masjid — the complete route,
+                  timings, what to eat, and which gates to not miss.
+                </p>
+                <span class="card-read-link">Read story</span>
+              </div>
+            </a>
+          </article>
+
+          <!-- Article 6 -->
+          <article class="article-card reveal" data-tags="architecture mughal">
+            <a href="#" aria-label="Read: Humayun's Tomb as blueprint for Taj Mahal">
+              <div class="article-card-image">
+                <img src="images/katha-hero.png"
+                  alt="The symmetrical garden-tomb of Humayun's Tomb in New Delhi, seen from the central pathway"
+                  width="600" height="400" loading="lazy">
+                <span class="card-category-badge tag-history">Mughal Era</span>
+              </div>
+              <div class="article-card-body">
+                <p class="card-meta">
+                  <time datetime="2025-01-18">18 Jan 2025</time>
+                  <span class="card-meta-sep">·</span>
+                  <span>5 min read</span>
+                </p>
+                <h3 class="card-title">Before the Taj, There Was Humayun: The Garden-Tomb That Invented Mughal Architecture</h3>
+                <p class="card-excerpt">
+                  Completed in 1572, Humayun's Tomb introduced the charbagh layout and sandstone-marble mix
+                  that Shah Jahan would perfect 69 years later on the banks of the Yamuna.
+                </p>
+                <span class="card-read-link">Read story</span>
+              </div>
+            </a>
+          </article>
+
+          <!-- Article 7 -->
+          <article class="article-card reveal" data-tags="old-delhi">
+            <a href="#" aria-label="Read: Nehru and Indira Gandhi at Paranthewali Gali">
+              <div class="article-card-image">
+                <img src="images/paranthewali-gali.png"
+                  alt="Old Delhi street with a rickshaw passing under colourful fabric awnings"
+                  width="600" height="400" loading="lazy">
+                <span class="card-category-badge tag-food">Food & Memory</span>
+              </div>
+              <div class="article-card-body">
+                <p class="card-meta">
+                  <time datetime="2024-12-30">30 Dec 2024</time>
+                  <span class="card-meta-sep">·</span>
+                  <span>4 min read</span>
+                </p>
+                <h3 class="card-title">Nehru Ate Here. Indira Ate Here. The Paranthas Haven't Changed a Bit.</h3>
+                <p class="card-excerpt">
+                  For over 150 years, three legendary shops in Paranthewali Gali have been serving stuffed
+                  paranthas swimming in desi ghee. This is their katha.
+                </p>
+                <span class="card-read-link">Read story</span>
+              </div>
+            </a>
+          </article>
+
+        </div>
+
+        <!-- Load More -->
+        <div class="load-more-wrap">
+          <button class="btn-load-more" type="button" id="load-more-btn" aria-label="Load more articles">
+            Load More Stories
+          </button>
+        </div>
+      </section>
+
+      <!-- ── SIDEBAR ── -->
+      <aside class="blog-sidebar" aria-label="Blog sidebar">
+
+        <!-- Newsletter -->
+        <div class="sidebar-widget newsletter-widget">
+          <h3>✦ The Weekly Katha</h3>
+          <p>One heritage story, every week. No noise, no clutter — just history worth reading.</p>
+          <form class="newsletter-form" action="#" method="post" aria-label="Newsletter signup">
+            <input type="email" name="email" placeholder="your@email.com" required autocomplete="email">
+            <button type="submit">Subscribe Free</button>
+          </form>
+        </div>
+
+        <!-- Popular Posts -->
+        <div class="sidebar-widget">
+          <h3>Most Read</h3>
+          <ul class="popular-list">
+            <li>
+              <span class="popular-num">01</span>
+              <a class="popular-title" href="#">The Definitive Self-Guided Walk Through Chandni Chowk</a>
+            </li>
+            <li>
+              <span class="popular-num">02</span>
+              <a class="popular-title" href="#">Asia's Largest Spice Market Is a Sensory Overload</a>
+            </li>
+            <li>
+              <span class="popular-num">03</span>
+              <a class="popular-title" href="#">Iron That Has Never Rusted: The Qutub Minar Mystery</a>
+            </li>
+            <li>
+              <span class="popular-num">04</span>
+              <a class="popular-title" href="#">Before the Taj, There Was Humayun</a>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Tags -->
+        <div class="sidebar-widget">
+          <h3>Browse by Topic</h3>
+          <div class="tags-cloud">
+            <a href="#">Old Delhi</a>
+            <a href="#">Mughal Era</a>
+            <a href="#">Architecture</a>
+            <a href="#">Bazaars</a>
+            <a href="#">Walk Guides</a>
+            <a href="#">Food</a>
+            <a href="#">UNESCO Sites</a>
+            <a href="#">Hidden Gems</a>
+            <a href="#">Monuments</a>
+            <a href="#">Mosques</a>
+            <a href="#">Forts</a>
+            <a href="#">Photography</a>
+          </div>
+        </div>
+
+        <!-- About blog -->
+        <div class="sidebar-widget">
+          <h3>About The Katha</h3>
+          <p style="font-size:0.87rem;color:rgba(15,23,42,0.6);line-height:1.7;margin-bottom:0.9rem;">
+            <em>Katha</em> means "story" in Hindi. This blog is our attempt to write down the stories
+            that the monuments can't speak aloud — and the lanes haven't stopped whispering.
+          </p>
+          <a href="index.html" class="card-read-link" style="font-size:0.75rem;">See our walks</a>
+        </div>
+
+      </aside>
+
+    </div>
+  </main>
+
+  <!-- ======================== FOOTER ======================== -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <p class="footer-logo">Katha<span>Trails</span></p>
+      <nav class="footer-links" aria-label="Footer navigation">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="kathas.html">The Katha</a></li>
+          <li><a href="privacy.html">Privacy</a></li>
+          <li><a href="terms.html">Terms</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </nav>
+      <span class="footer-copy">&copy; 2026 Katha Trails. All rights reserved.</span>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+  <script>
+    /* ── Blog tag filter ── */
+    const blogTags  = document.querySelectorAll('.blog-tag');
+    const articles  = document.querySelectorAll('.article-grid .article-card');
+
+    blogTags.forEach(btn => {
+      btn.addEventListener('click', () => {
+        blogTags.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        const filter = btn.dataset.filter;
+        articles.forEach(card => {
+          const tags = card.dataset.tags || '';
+          if (filter === 'all' || tags.includes(filter)) {
+            card.style.display = '';
+          } else {
+            card.style.display = 'none';
+          }
+        });
+      });
+    });
+
+    /* ── Load More (placeholder) ── */
+    document.getElementById('load-more-btn')?.addEventListener('click', function () {
+      this.textContent = 'More stories coming soon…';
+      this.disabled = true;
+    });
+
+    /* ── Newsletter form ── */
+    document.querySelector('.newsletter-form')?.addEventListener('submit', function (e) {
+      e.preventDefault();
+      const btn = this.querySelector('button');
+      btn.textContent = '✓ You\'re subscribed!';
+      btn.style.background = '#2d8a60';
+      btn.disabled = true;
+    });
+  </script>
+</body>
+
+</html>
